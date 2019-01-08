@@ -1,0 +1,13 @@
+<?xml version = "1.0"?>
+<Job>
+ <Process Name="Virus Scanner">
+  <Calculate>6</Calculate>
+  <IO>1</IO>
+  <InterProcessComm>1</InterProcessComm>
+  <CriticalSection>1</CriticalSection>
+  <Yield>1</Yield>
+  <Child>5</Child>
+  <Memory>10</Memory>
+  <Priority>5</Priority>
+ </Process>
+</Job>

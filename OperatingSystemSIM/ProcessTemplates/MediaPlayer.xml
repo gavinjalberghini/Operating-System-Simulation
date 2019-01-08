@@ -1,0 +1,13 @@
+<?xml version = "1.0"?>
+<Job>
+ <Process Name="Media Player">
+  <Calculate>4</Calculate>
+  <IO>3</IO>
+  <InterProcessComm>1</InterProcessComm>
+  <CriticalSection>1</CriticalSection>
+  <Yield>1</Yield>
+  <Child>3</Child>
+  <Memory>25</Memory>
+  <Priority>15</Priority>
+ </Process>
+</Job>

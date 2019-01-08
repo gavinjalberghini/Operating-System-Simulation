@@ -1,0 +1,13 @@
+<?xml version = "1.0"?>
+<Job>
+ <Process Name="Photo Editor">
+  <Calculate>6</Calculate>
+  <IO>1</IO>
+  <InterProcessComm>1</InterProcessComm>
+  <CriticalSection>1</CriticalSection>
+  <Yield>1</Yield>
+  <Child>3</Child>
+  <Memory>30</Memory>
+  <Priority>45</Priority>
+ </Process>
+</Job>
