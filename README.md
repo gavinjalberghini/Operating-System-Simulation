@@ -5,9 +5,8 @@ This repository houses code, documentation, and project information required for
 ![OS](https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Teaser/operating-system-t.jpg)
 
 ## Navigation
-__Documentation__: Contains all of the relevant documents for this project. Namely the assignment documentation and the users guide.
-
-__OperatingSystemSim__: Source code for the project.
+* __Documentation__: Contains all of the relevant documents for this project. Namely the assignment documentation and the users guide.
+* __OperatingSystemSim__: Source code for the project.
 
 ## Developers
 _Gavin Alberghini_
