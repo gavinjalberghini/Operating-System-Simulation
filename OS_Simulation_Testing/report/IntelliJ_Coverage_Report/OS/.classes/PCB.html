@@ -1,0 +1,385 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: PCB</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">OS</a> ]
+</div>
+
+<h1>Coverage Summary for Class: PCB (OS)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PCB</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (56/ 56)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (85/ 85)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">PCB$ProcessState</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (58/ 58)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (87/ 87)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package OS;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.ArrayList;
+<i>4</i>&nbsp;import java.util.Random;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;public class PCB {
+<i>8</i>&nbsp;
+<b class="fc"><i>9</i>&nbsp;    private static int baseRegBuilder = 0;</b>
+<i>10</i>&nbsp;
+<b class="fc"><i>11</i>&nbsp;    public enum ProcessState{</b>
+<b class="fc"><i>12</i>&nbsp;        NEW,READY,WAIT,RUN,EXIT</b>
+<i>13</i>&nbsp;    }
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    //GENERIC PROCESS INFO
+<b class="fc"><i>16</i>&nbsp;    int pid = 0;</b>
+<b class="fc"><i>17</i>&nbsp;    int programCounter = 0;</b>
+<b class="fc"><i>18</i>&nbsp;    int totalCpuCyclesUsed = 0;</b>
+<b class="fc"><i>19</i>&nbsp;    int priority = 100;</b>
+<b class="fc"><i>20</i>&nbsp;    String jobType = &quot;&quot;;</b>
+<b class="fc"><i>21</i>&nbsp;    ArrayList&lt;String&gt; instructions = new ArrayList&lt;&gt;();</b>
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    //BASE &amp; LIMIT REGISTERS
+<b class="fc"><i>24</i>&nbsp;    int baseRegister = 0;</b>
+<b class="fc"><i>25</i>&nbsp;    int limitRegister = 0;</b>
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    //PAGE MANAGING
+<b class="fc"><i>28</i>&nbsp;    int pageCtr = 0;</b>
+<b class="fc"><i>29</i>&nbsp;    int numOfPages = 0;</b>
+<b class="fc"><i>30</i>&nbsp;    int lastCpuIter = 0;</b>
+<b class="fc"><i>31</i>&nbsp;    int pageLoadIncr = 0;</b>
+<b class="fc"><i>32</i>&nbsp;    int nextLoadAmnt = 0;</b>
+<b class="fc"><i>33</i>&nbsp;    int offset = 1;</b>
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;    //REQUIREMENTS TO RUN
+<b class="fc"><i>36</i>&nbsp;    int memoryReq = 0;</b>
+<b class="fc"><i>37</i>&nbsp;    int resourceOneReq = 0;</b>
+<b class="fc"><i>38</i>&nbsp;    int resourceTwoReq = 0;</b>
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    //IPC MANAGEMENT
+<b class="fc"><i>41</i>&nbsp;    int mailKey = 0;</b>
+<b class="fc"><i>42</i>&nbsp;    String mailData = &quot;&quot;;</b>
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;    //STATUS MONITORS
+<b class="fc"><i>45</i>&nbsp;    boolean hasProcessResources = false;</b>
+<b class="fc"><i>46</i>&nbsp;    boolean hasMemory = false;</b>
+<b class="fc"><i>47</i>&nbsp;    boolean inRamOnly = false;</b>
+<b class="fc"><i>48</i>&nbsp;    boolean pageLoadNeeded = false;</b>
+<b class="fc"><i>49</i>&nbsp;    ProcessState processState = ProcessState.NEW;</b>
+<i>50</i>&nbsp;
+<b class="fc"><i>51</i>&nbsp;    public PCB(){</b>
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;    }
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;    public static int getBaseRegBuilder() {
+<b class="fc"><i>56</i>&nbsp;        return baseRegBuilder;</b>
+<i>57</i>&nbsp;    }
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;    public static void setBaseRegBuilder(int baseRegBuilder) {
+<b class="fc"><i>60</i>&nbsp;        PCB.baseRegBuilder = baseRegBuilder;</b>
+<i>61</i>&nbsp;    }
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;    public int getPid(){
+<b class="fc"><i>64</i>&nbsp;        return this.pid;</b>
+<i>65</i>&nbsp;    }
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;    public void setPid(int pid){
+<b class="fc"><i>68</i>&nbsp;        this.pid = pid;</b>
+<i>69</i>&nbsp;    }
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;    public int getProgramCounter(){
+<b class="fc"><i>72</i>&nbsp;        return this.programCounter;</b>
+<i>73</i>&nbsp;    }
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;    public void setProgramCounter(int programCounter) {
+<b class="fc"><i>76</i>&nbsp;        this.programCounter = programCounter;</b>
+<i>77</i>&nbsp;    }
+<i>78</i>&nbsp;
+<i>79</i>&nbsp;    public int getTotalCpuCyclesUsed(){
+<b class="fc"><i>80</i>&nbsp;        return this.totalCpuCyclesUsed;</b>
+<i>81</i>&nbsp;    }
+<i>82</i>&nbsp;
+<i>83</i>&nbsp;    public void setTotalCpuCyclesUsed(int totalCpuCyclesUsed){
+<b class="fc"><i>84</i>&nbsp;        this.totalCpuCyclesUsed = totalCpuCyclesUsed;</b>
+<i>85</i>&nbsp;    }
+<i>86</i>&nbsp;
+<i>87</i>&nbsp;    public int getPriority(){
+<b class="fc"><i>88</i>&nbsp;        return this.priority;</b>
+<i>89</i>&nbsp;    }
+<i>90</i>&nbsp;
+<i>91</i>&nbsp;    public void setPriority(int priority){
+<b class="fc"><i>92</i>&nbsp;        this.priority = priority;</b>
+<i>93</i>&nbsp;    }
+<i>94</i>&nbsp;
+<i>95</i>&nbsp;    public String getJobType(){
+<b class="fc"><i>96</i>&nbsp;        return this.jobType;</b>
+<i>97</i>&nbsp;    }
+<i>98</i>&nbsp;
+<i>99</i>&nbsp;    public void setJobType(String jobType){
+<b class="fc"><i>100</i>&nbsp;        this.jobType = jobType;</b>
+<i>101</i>&nbsp;    }
+<i>102</i>&nbsp;
+<i>103</i>&nbsp;    public ArrayList&lt;String&gt; getInstructions(){
+<b class="fc"><i>104</i>&nbsp;        return this.instructions;</b>
+<i>105</i>&nbsp;    }
+<i>106</i>&nbsp;
+<i>107</i>&nbsp;    public void setInstructions(ArrayList&lt;String&gt; instructions){
+<b class="fc"><i>108</i>&nbsp;        this.instructions = instructions;</b>
+<i>109</i>&nbsp;    }
+<i>110</i>&nbsp;
+<i>111</i>&nbsp;    public int getBaseRegister(){
+<b class="fc"><i>112</i>&nbsp;        return this.baseRegister;</b>
+<i>113</i>&nbsp;    }
+<i>114</i>&nbsp;
+<i>115</i>&nbsp;    public void setBaseRegister(int baseRegister) {
+<b class="fc"><i>116</i>&nbsp;        this.baseRegister = baseRegister;</b>
+<i>117</i>&nbsp;    }
+<i>118</i>&nbsp;
+<i>119</i>&nbsp;    public int getLimitRegister() {
+<b class="fc"><i>120</i>&nbsp;        return limitRegister;</b>
+<i>121</i>&nbsp;    }
+<i>122</i>&nbsp;
+<i>123</i>&nbsp;    public void setLimitRegister(int limitRegister) {
+<b class="fc"><i>124</i>&nbsp;        this.limitRegister = limitRegister;</b>
+<i>125</i>&nbsp;    }
+<i>126</i>&nbsp;
+<i>127</i>&nbsp;    public void setPageCtr(int pageCtr) {
+<b class="fc"><i>128</i>&nbsp;        this.pageCtr = pageCtr;</b>
+<i>129</i>&nbsp;    }
+<i>130</i>&nbsp;
+<i>131</i>&nbsp;    public int getPageCtr() {
+<b class="fc"><i>132</i>&nbsp;        return pageCtr;</b>
+<i>133</i>&nbsp;    }
+<i>134</i>&nbsp;
+<i>135</i>&nbsp;    public int getNumOfPages() {
+<b class="fc"><i>136</i>&nbsp;        return numOfPages;</b>
+<i>137</i>&nbsp;    }
+<i>138</i>&nbsp;
+<i>139</i>&nbsp;    public void setNumOfPages(int numOfPages) {
+<b class="fc"><i>140</i>&nbsp;        this.numOfPages = numOfPages;</b>
+<i>141</i>&nbsp;    }
+<i>142</i>&nbsp;
+<i>143</i>&nbsp;    public int getLastCpuIter() {
+<b class="fc"><i>144</i>&nbsp;        return lastCpuIter;</b>
+<i>145</i>&nbsp;    }
+<i>146</i>&nbsp;
+<i>147</i>&nbsp;    public void setLastCpuIter(int lastCpuIter) {
+<b class="fc"><i>148</i>&nbsp;        this.lastCpuIter = lastCpuIter;</b>
+<i>149</i>&nbsp;    }
+<i>150</i>&nbsp;
+<i>151</i>&nbsp;    public int getPageLoadIncr() {
+<b class="fc"><i>152</i>&nbsp;        return pageLoadIncr;</b>
+<i>153</i>&nbsp;    }
+<i>154</i>&nbsp;
+<i>155</i>&nbsp;    public void setPageLoadIncr(int pageLoadIncr) {
+<b class="fc"><i>156</i>&nbsp;        this.pageLoadIncr = pageLoadIncr;</b>
+<i>157</i>&nbsp;    }
+<i>158</i>&nbsp;
+<i>159</i>&nbsp;    public int getNextLoadAmnt() {
+<b class="fc"><i>160</i>&nbsp;        return nextLoadAmnt;</b>
+<i>161</i>&nbsp;    }
+<i>162</i>&nbsp;
+<i>163</i>&nbsp;    public void setNextLoadAmnt(int nextLoadAmnt) {
+<b class="fc"><i>164</i>&nbsp;        this.nextLoadAmnt = nextLoadAmnt;</b>
+<i>165</i>&nbsp;    }
+<i>166</i>&nbsp;
+<i>167</i>&nbsp;    public int getOffset() {
+<b class="fc"><i>168</i>&nbsp;        return offset;</b>
+<i>169</i>&nbsp;    }
+<i>170</i>&nbsp;
+<i>171</i>&nbsp;    public void setOffset(int offset) {
+<b class="fc"><i>172</i>&nbsp;        this.offset = offset;</b>
+<i>173</i>&nbsp;    }
+<i>174</i>&nbsp;
+<i>175</i>&nbsp;    public int getMemoryReq() {
+<b class="fc"><i>176</i>&nbsp;        return memoryReq;</b>
+<i>177</i>&nbsp;    }
+<i>178</i>&nbsp;
+<i>179</i>&nbsp;    public void setMemoryReq(int memoryReq) {
+<b class="fc"><i>180</i>&nbsp;        this.memoryReq = memoryReq;</b>
+<i>181</i>&nbsp;    }
+<i>182</i>&nbsp;
+<i>183</i>&nbsp;    public int getResourceOneReq() {
+<b class="fc"><i>184</i>&nbsp;        return resourceOneReq;</b>
+<i>185</i>&nbsp;    }
+<i>186</i>&nbsp;
+<i>187</i>&nbsp;    public void setResourceOneReq(int resourceOneReq) {
+<b class="fc"><i>188</i>&nbsp;        this.resourceOneReq = resourceOneReq;</b>
+<i>189</i>&nbsp;    }
+<i>190</i>&nbsp;
+<i>191</i>&nbsp;    public int getResourceTwoReq() {
+<b class="fc"><i>192</i>&nbsp;        return resourceTwoReq;</b>
+<i>193</i>&nbsp;    }
+<i>194</i>&nbsp;
+<i>195</i>&nbsp;    public void setResourceTwoReq(int resourceTwoReq) {
+<b class="fc"><i>196</i>&nbsp;        this.resourceTwoReq = resourceTwoReq;</b>
+<i>197</i>&nbsp;    }
+<i>198</i>&nbsp;
+<i>199</i>&nbsp;    public int getMailKey() {
+<b class="fc"><i>200</i>&nbsp;        return mailKey;</b>
+<i>201</i>&nbsp;    }
+<i>202</i>&nbsp;
+<i>203</i>&nbsp;    public void setMailKey(int mailKey) {
+<b class="fc"><i>204</i>&nbsp;        this.mailKey = mailKey;</b>
+<i>205</i>&nbsp;    }
+<i>206</i>&nbsp;
+<i>207</i>&nbsp;    public String getMailData() {
+<b class="fc"><i>208</i>&nbsp;        return mailData;</b>
+<i>209</i>&nbsp;    }
+<i>210</i>&nbsp;
+<i>211</i>&nbsp;    public void setMailData(String mailData) {
+<b class="fc"><i>212</i>&nbsp;        this.mailData = mailData;</b>
+<i>213</i>&nbsp;    }
+<i>214</i>&nbsp;
+<i>215</i>&nbsp;    public boolean hasProcessResources() {
+<b class="fc"><i>216</i>&nbsp;        return hasProcessResources;</b>
+<i>217</i>&nbsp;    }
+<i>218</i>&nbsp;
+<i>219</i>&nbsp;    public void setHasProcessResources(boolean hasProcessResources) {
+<b class="fc"><i>220</i>&nbsp;        this.hasProcessResources = hasProcessResources;</b>
+<i>221</i>&nbsp;    }
+<i>222</i>&nbsp;
+<i>223</i>&nbsp;    public boolean hasMemory() {
+<b class="fc"><i>224</i>&nbsp;        return hasMemory;</b>
+<i>225</i>&nbsp;    }
+<i>226</i>&nbsp;
+<i>227</i>&nbsp;    public void setHasMemory(boolean hasMemory) {
+<b class="fc"><i>228</i>&nbsp;        this.hasMemory = hasMemory;</b>
+<i>229</i>&nbsp;    }
+<i>230</i>&nbsp;
+<i>231</i>&nbsp;    public boolean isInRamOnly() {
+<b class="fc"><i>232</i>&nbsp;        return inRamOnly;</b>
+<i>233</i>&nbsp;    }
+<i>234</i>&nbsp;
+<i>235</i>&nbsp;    public void setInRamOnly(boolean inRamOnly) {
+<b class="fc"><i>236</i>&nbsp;        this.inRamOnly = inRamOnly;</b>
+<i>237</i>&nbsp;    }
+<i>238</i>&nbsp;
+<i>239</i>&nbsp;    public boolean isPageLoadNeeded() {
+<b class="fc"><i>240</i>&nbsp;        return pageLoadNeeded;</b>
+<i>241</i>&nbsp;    }
+<i>242</i>&nbsp;
+<i>243</i>&nbsp;    public void setPageLoadNeeded(boolean pageLoadNeeded) {
+<b class="fc"><i>244</i>&nbsp;        this.pageLoadNeeded = pageLoadNeeded;</b>
+<i>245</i>&nbsp;    }
+<i>246</i>&nbsp;
+<i>247</i>&nbsp;    public ProcessState getProcessState() {
+<b class="fc"><i>248</i>&nbsp;        return processState;</b>
+<i>249</i>&nbsp;    }
+<i>250</i>&nbsp;
+<i>251</i>&nbsp;    public void setProcessState(ProcessState processState) {
+<b class="fc"><i>252</i>&nbsp;        this.processState = processState;</b>
+<i>253</i>&nbsp;    }
+<i>254</i>&nbsp;
+<i>255</i>&nbsp;    public void generateAndSetPid(){
+<b class="fc"><i>256</i>&nbsp;        Random generate = new Random();</b>
+<b class="fc"><i>257</i>&nbsp;        setPid(generate.nextInt(899999)+100000);</b>
+<i>258</i>&nbsp;    }
+<i>259</i>&nbsp;
+<i>260</i>&nbsp;    public void generateAndSetLogicalMemory(){
+<b class="fc"><i>261</i>&nbsp;        setBaseRegister(baseRegBuilder);</b>
+<b class="fc"><i>262</i>&nbsp;        setLimitRegister(this.memoryReq);</b>
+<b class="fc"><i>263</i>&nbsp;        setBaseRegBuilder(getBaseRegBuilder()+getLimitRegister());</b>
+<b class="fc"><i>264</i>&nbsp;        setPageCtr(getBaseRegister());</b>
+<i>265</i>&nbsp;    }
+<i>266</i>&nbsp;
+<i>267</i>&nbsp;    public void shiftToNextInstruction(){
+<b class="fc"><i>268</i>&nbsp;        getInstructions().set(getProgramCounter(),&quot;FINISHED.&quot;);</b>
+<b class="fc"><i>269</i>&nbsp;        setProgramCounter(getProgramCounter()+1);</b>
+<i>270</i>&nbsp;    }
+<i>271</i>&nbsp;
+<i>272</i>&nbsp;    @Override
+<i>273</i>&nbsp;    public String toString() {
+<b class="fc"><i>274</i>&nbsp;        return super.toString();</b>
+<i>275</i>&nbsp;    }
+<i>276</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-04-17 05:39</div>
+</div>
+</body>
+</html>

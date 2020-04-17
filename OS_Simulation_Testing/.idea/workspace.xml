@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c3018f7b-e5fd-4cef-88d4-f32f1310892f" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="170" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\gavin\Desktop\OS_Simulation_Testing\report\IntelliJ_Coverage_Report" />
+  </component>
+  <component name="ProjectId" id="1aYGVNIcJsZgWNjG6SMVMg2RcHO" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gavin\Desktop\OS_Simulation_Testing" />
+      <recent name="C:\Users\gavin\Desktop\OS_Simulation_Testing\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.All_JUnit_Tests">
+    <configuration name="All_JUnit_Tests" type="JUnit" factoryName="JUnit">
+      <module name="OS_Simulation_Testing" />
+      <extension name="coverage" sample_coverage="false">
+        <pattern>
+          <option name="PATTERN" value="test.OS.*" />
+          <option name="ENABLED" value="false" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="OS.Frame" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="OS.Memory" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="OS.MMU" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="OS.PCB" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="OS.PDT" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="OS.Process" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.OS" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MMUTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OS_Simulation_Testing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.OS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.OS" />
+      <option name="MAIN_CLASS_NAME" value="test.OS.MMUTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProcessTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OS_Simulation_Testing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.OS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.OS" />
+      <option name="MAIN_CLASS_NAME" value="test.OS.ProcessTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProcessTest.testGetPcb" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OS_Simulation_Testing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.OS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.OS" />
+      <option name="MAIN_CLASS_NAME" value="test.OS.ProcessTest" />
+      <option name="METHOD_NAME" value="testGetPcb" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProcessTest.testGetPdt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OS_Simulation_Testing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.OS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.OS" />
+      <option name="MAIN_CLASS_NAME" value="test.OS.ProcessTest" />
+      <option name="METHOD_NAME" value="testGetPdt" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProcessTest.testSetConnectedProcPid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OS_Simulation_Testing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.OS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.OS" />
+      <option name="MAIN_CLASS_NAME" value="test.OS.ProcessTest" />
+      <option name="METHOD_NAME" value="testSetConnectedProcPid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Mutation Tests" type="PIT" factoryName="PIT Runner" REPORT_DIR="$PROJECT_DIR$/report" SOURCE_DIRS="$PROJECT_DIR$/src" TARGET_CLASSES="OS.PCB,OS.Memory,OS.Frame,OS.PDT,OS.Process,OS.MMU" TARGET_TESTS="test.OS.*" otherParams="--outputFormats XML,HTML">
+      <module name="OS_Simulation_Testing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PIT" factoryName="PIT Runner" REPORT_DIR="$PROJECT_DIR$/report" SOURCE_DIRS="$PROJECT_DIR$/src" TARGET_CLASSES="OS.*" TARGET_TESTS="OS_Tests.*" otherParams="--outputFormats XML,HTML">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.All_JUnit_Tests" />
+      <item itemvalue="JUnit.ProcessTest.testSetConnectedProcPid" />
+      <item itemvalue="JUnit.ProcessTest" />
+      <item itemvalue="JUnit.ProcessTest.testGetPcb" />
+      <item itemvalue="JUnit.ProcessTest.testGetPdt" />
+      <item itemvalue="JUnit.MMUTest" />
+      <item itemvalue="PIT Runner.Mutation Tests" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MMUTest" />
+        <item itemvalue="JUnit.ProcessTest" />
+        <item itemvalue="JUnit.ProcessTest.testGetPdt" />
+        <item itemvalue="JUnit.ProcessTest.testGetPcb" />
+        <item itemvalue="JUnit.ProcessTest.testSetConnectedProcPid" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3018f7b-e5fd-4cef-88d4-f32f1310892f" name="Default Changelist" comment="" />
+      <created>1586905136334</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586905136334</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/OS_Simulation_Testing$FrameTest.ic" NAME="FrameTest Coverage Results" MODIFIED="1587044836611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>OS.Frame</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/OS_Simulation_Testing$All_JUnit_Tests.ic" NAME="All_JUnit_Tests Coverage Results" MODIFIED="1587116340225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>OS.Frame</FILTER>
+      <FILTER>OS.Memory</FILTER>
+      <FILTER>OS.MMU</FILTER>
+      <FILTER>OS.PCB</FILTER>
+      <FILTER>OS.PDT</FILTER>
+      <FILTER>OS.Process</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/OS_Simulation_Testing$All_JUnit_Tests.exec" NAME="All_JUnit_Tests Coverage Results" MODIFIED="1587045519862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.OS.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/OS_Simulation_Testing$test_OS_in_OS_Simulation_Testing.exec" NAME="test.OS in OS_Simulation_Testing Coverage Results" MODIFIED="1587045079680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.OS.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/OS_Simulation_Testing$test_OS_in_OS_Simulation_Testing.ic" NAME="test.OS in OS_Simulation_Testing Coverage Results" MODIFIED="1587045013212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.OS.*</FILTER>
+    </SUITE>
+  </component>
+</project>
