@@ -10,7 +10,7 @@ This repository houses code, documentation, and project requirement information.
 
 ## Navigation
 * __Documentation__: Contains all of the relevant documents for this project. Namely the assignment documentation and the users guide.
-* __OperatingSystemSim__: Source code for the project.
+* __OS_Simulation_Testing__: Source code for the project.
 
 &nbsp;
 
