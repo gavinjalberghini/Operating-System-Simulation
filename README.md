@@ -9,8 +9,10 @@ This repository houses code, documentation, and project requirement information.
 &nbsp;
 
 ## Navigation
-* __Documentation__: Contains all of the relevant documents for this project. Namely the assignment documentation and the users guide.
-* __OS_Simulation_Testing__: Source code for the project.
+* __Documentation__: Contains all of the relevant documents for this project. Namely the assignment documentation and the users guide
+* __OS_Simulation_Testing__: Source code for the project and for testing development
+  * __OS__: Core simulation functionality
+  * __test__: Unit testing and PIT framework for mutation tests and code coverage
 
 &nbsp;
 
